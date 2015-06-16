@@ -14,7 +14,7 @@ module Dimensional
     end
 
     module ClassMethods
-      def set_enum_config( enum_attributes )
+      def set_enum_attributes( enum_attributes )
         @enum_attributes = enum_attributes
       end
 
