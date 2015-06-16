@@ -8,9 +8,9 @@ module Dimensional
 
     def self.included(klass)
       klass.extend ClassMethods
-      # klass.class_eval do
-      #   attr_reader :enum_attributes
-      # end
+      klass.singleton_class.class_eval do
+        attr_reader :enum_attributes
+      end
     end
 
     module ClassMethods
