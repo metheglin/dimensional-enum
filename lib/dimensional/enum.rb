@@ -35,7 +35,7 @@ module Dimensional
 
           define_method enum_key do
             return nil unless attr_key = super()
-            ::Dimensional::Enum::Object.new attr_key, enum_attribute
+            ::Dimensional::Enum::Attribute.new attr_key, enum_attribute
           end
         end
       end
