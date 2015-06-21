@@ -1,3 +1,5 @@
+require "active_support/core_ext/module/delegation"
+
 require "dimensional/enum/version"
 require "dimensional/enum/attributes"
 require "dimensional/enum/attribute"

@@ -2,6 +2,8 @@ module Dimensional
   module Enum
     class Attribute
 
+      delegate *(String.instance_methods - Object.instance_methods), to: :to_s
+
       def initialize( enum_attr_key, enum_attribute )
         @enum_attr_key  = enum_attr_key
         @enum_attribute = enum_attribute
@@ -9,6 +11,10 @@ module Dimensional
 
       def ==( other )
         to_s == other
+      end
+
+      def <=>( other )
+        to_s <=> other
       end
 
       def id

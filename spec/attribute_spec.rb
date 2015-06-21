@@ -52,5 +52,17 @@ module Dimensional::Enum
       expect( enum_attribute == "sale_on_nego" ).to eq true
     end
 
+    describe "Stringを想定したメソッドよびだしがto_sに対しておこなわれること" do
+      let(:enum_attributes) { Attributes.new Sample::ENUM_ATTRIBUTES[:core] }
+      let(:enum_attribute) { enum_attribute  = Attribute.new "released", enum_attributes.to_attribute_h(:status) }
+      it "#empty?" do
+        expect( enum_attribute.empty? ).to eq false
+      end
+
+      it "#upcase" do
+        expect( enum_attribute.upcase ).to eq "RELEASED"
+      end
+    end
+
   end
 end
