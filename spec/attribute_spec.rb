@@ -52,7 +52,14 @@ module Dimensional::Enum
       expect( enum_attribute == "sale_on_nego" ).to eq true
     end
 
-    describe "Stringを想定したメソッドよびだしがto_sに対しておこなわれること" do
+    it "supports right side equality check" do
+      enum_attributes = Attributes.new Sample::ENUM_ATTRIBUTES[:core]
+      enum_attribute  = Attribute.new "sale_on_nego", enum_attributes.to_attribute_h(:sale_state)
+      expect(  "sale_on_nego" == enum_attribute ).to eq true
+      expect( ["sale_running", "sale_on_nego"].include? enum_attribute ).to eq true
+    end
+
+    describe "Stringを想定したメソッドよびだしがto_strに対しておこなわれること" do
       let(:enum_attributes) { Attributes.new Sample::ENUM_ATTRIBUTES[:core] }
       let(:enum_attribute) { enum_attribute  = Attribute.new "released", enum_attributes.to_attribute_h(:status) }
       it "#empty?" do

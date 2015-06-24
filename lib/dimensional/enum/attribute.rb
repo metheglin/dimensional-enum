@@ -2,7 +2,7 @@ module Dimensional
   module Enum
     class Attribute
 
-      delegate *(String.instance_methods - Object.instance_methods), to: :to_s
+      delegate *(String.instance_methods - Object.instance_methods), to: :to_str
 
       def initialize( enum_attr_key, enum_attribute )
         @enum_attr_key  = enum_attr_key
@@ -35,8 +35,12 @@ module Dimensional
         nil
       end
 
-      def to_s
+      def to_str
         label.to_s
+      end
+
+      def to_s
+        to_str
       end
 
       def to_sym
