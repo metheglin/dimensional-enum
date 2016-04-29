@@ -5,11 +5,11 @@ module Sample
     # ---------------------------
     core: {
       sale_state: {
-        sale_planned: { id: 1, name: '売り出し見込み' },
-        sale_running: { id: 2, name: '売り出し中' },
-        sale_stopped: { id: 3, name: '売り止め' },
-        sale_on_nego: { id: 4, name: '商談中' },
-        sale_nego_completed: { id: 5, name: '成約済み' }
+        sale_planned: { id: 1, name: '売り出し見込み', number: 100 },
+        sale_running: { id: 2, name: '売り出し中', number: 200 },
+        sale_stopped: { id: 3, name: '売り止め', number: 300 },
+        sale_on_nego: { id: 4, name: '商談中', number: 400 },
+        sale_nego_completed: { id: 5, name: '成約済み', number: nil }
       },
       public_scope: {
         public_to_all:        { id: 1, name: '公開' },

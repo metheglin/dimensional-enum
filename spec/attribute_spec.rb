@@ -15,10 +15,24 @@ module Dimensional::Enum
       expect( enum_attribute.id ).to eq 4
     end
 
+    it "#value" do
+      enum_attributes = Attributes.new Sample::ENUM_ATTRIBUTES[:core]
+      enum_attribute  = Attribute.new "sale_on_nego", enum_attributes.to_attribute_h(:sale_state)
+      expect( enum_attribute.value ).to eq 4
+    end
+
     it "#name" do
       enum_attributes = Attributes.new Sample::ENUM_ATTRIBUTES[:core]
       enum_attribute  = Attribute.new "sale_on_nego", enum_attributes.to_attribute_h(:sale_state)
       expect( enum_attribute.name ).to eq "商談中"
+    end
+
+    it "#number" do
+      enum_attributes = Attributes.new Sample::ENUM_ATTRIBUTES[:core]
+      enum_attribute  = Attribute.new "sale_on_nego", enum_attributes.to_attribute_h(:sale_state)
+      expect( enum_attribute.number ).to eq 400
+      enum_attribute  = Attribute.new "sale_nego_completed", enum_attributes.to_attribute_h(:sale_state)
+      expect( enum_attribute.number ).to eq nil
     end
 
     it "#label" do

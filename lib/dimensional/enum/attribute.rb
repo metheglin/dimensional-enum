@@ -53,6 +53,13 @@ module Dimensional
 
       alias_method :value, :id
 
+      def method_missing( method, *args, &block )
+        if @enum_attribute[label].has_key? method
+          return @enum_attribute[label][method]
+        end
+        super
+      end
+
     end
   end
 end
